@@ -16,14 +16,43 @@ public class CalculatorController {
         text.setText(text.getText() + toInsert);
     }
 
+    public boolean verifyNoTwoOperators() {
+        String[] letters = text.getText().split("");
+        String lastLetter = letters[letters.length - 1];
+        if (lastLetter.equals("*") || lastLetter.equals("/") || lastLetter.equals("+") || lastLetter.equals("-")) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public void handleButtonAction(MouseEvent event) {
 
         Button button = (Button) event.getSource();
         String number = button.getText();
 
-        if ("=".equals(number)) {
-        } else {
-            insert(number);
+        switch (number) {
+            case "=":
+                break;
+            case "+":
+            case "-":
+                if (!verifyNoTwoOperators()) {
+                    insert("(" + number);
+                } else {
+                    insert(number);
+                }
+                break;
+            case "/":
+            case "*":
+                if (verifyNoTwoOperators()) {
+                    insert(number);
+                }
+                break;
+            case "C":
+                text.setText("");
+                break;
+            default:
+                insert(number);
         }
 
     }
