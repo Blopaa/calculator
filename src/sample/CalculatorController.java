@@ -26,6 +26,12 @@ public class CalculatorController {
         }
     }
 
+    public void removeLastIndex() {
+        String[] letters = text.getText().split("");
+        String[] result = Arrays.copyOf(letters, letters.length - 1);
+        text.setText(String.join("", result));
+    }
+
     public void handleButtonAction(MouseEvent event) {
 
         Button button = (Button) event.getSource();
@@ -50,6 +56,9 @@ public class CalculatorController {
                 break;
             case "C":
                 text.setText("");
+                break;
+            case "D":
+                removeLastIndex();
                 break;
             default:
                 insert(number);
