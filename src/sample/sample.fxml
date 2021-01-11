@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="474.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CalculatorController">
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CalculatorController">
    <top>
       <TextField fx:id="text" prefHeight="104.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -19,8 +19,8 @@
             <Font name="System Bold" size="26.0" />
          </font></TextField>
    </top>
-   <left>
-      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="224.0" prefWidth="600.0" style="-fx-background-color: #14f66f;" BorderPane.alignment="CENTER">
+   <center>
+      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="376.0" prefWidth="600.0" style="-fx-background-color: #14f66f;" BorderPane.alignment="CENTER">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -137,5 +137,5 @@
             </Button>
          </children>
       </GridPane>
-   </left>
+   </center>
 </BorderPane>
